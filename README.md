@@ -3,6 +3,7 @@
 This repository contains a project mainly focuses on designing and implementing two mobile industrial Robots (octa_kit and Naqel_kit) each has 4 mecanum wheels and lifting mechanism to lift and transport products in warehouses. the control of mobile robots using ROS Melodic platform proofs to be reliable with high level of accuracy and precision. In the aim of developing swarm technique between two mobile robots, two robots are manufactured and one of them has been successfully modeled and simulated in both Rviz and Gazebo in which it navigates through a previously built map using LIDAR. The robot managed to reach the end point with the specified pose with acceptable accuracy.
 
 ![octa kit](./data/robot_design.png) 
+
 This project is done by Team of 6 memebers from Nile University:
 1. Ahmed Mohsen Ali (me)
 2. Mamdouh Ezz
