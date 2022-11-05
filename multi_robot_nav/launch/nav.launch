@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<launch>
+
+  <param name="/use_sim_time" value="true" />
+
+
+
+  <!-- Map server -->
+  <arg  name="map_file" default="$(find multi_robot_nav)/map/maze_map.yaml"/>
+  <node pkg="map_server" name="map_server" type="map_server" args="$(arg map_file)"/>
+
+  <!-- AMCL -->
+  <include  file="$(find multi_robot_nav)/launch/amcl_robot1.launch"/>
+  <!--<include  file="$(find multi_robot_nav)/launch/amcl_robot2.launch"/>-->
+
+<!-- MOVE_BASE-->
+
+    <include file="$(find multi_robot_nav)/launch/move_base_1.launch" />
+   <!-- <include file="$(find multi_robot_nav)/launch/move_base_2.launch" />-->
+
+  <!--Launching Rviz -->
+  <node pkg="rviz" type="rviz" name="rviz"/>
+
+
+</launch>
+

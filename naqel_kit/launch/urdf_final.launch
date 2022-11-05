@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<launch>
+  <!-- Load the URDF into ROS parameter server -->
+  <param name="robot_description" textfile="$(find naqel_kit)/urdf/urdf_final.urdf"/> 
+
+  <!-- Publish joint values -->
+  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
+
+  <!--convert joint states to TF transforms for rviz, etc--> 
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher"/> 
+  <!--<node pkg="tf" type="static_transform_publisher" name="map_base_footprint_broadcaster" args="0 0 0 0 0 0 map odom 100"/>--> 
+
+  <!-- rviz -->
+  <node pkg="rviz" type="rviz" name="rviz" required="true"  args="-d $(find naqel_kit)/rviz/urdf_final.rviz"/>
+
+  <!-- Load joint controller configuration from YAML file to parameter server -->
+  <rosparam  file="$(find naqel_kit)/config/joint_states.yaml" command="load"/>
+
+  <!--Launch gazebo-->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+   <arg name="world_name" value="$(find naqel_kit)/Final_Maze/Final_maze.world"/>
+   <arg name="debug" value="false" />
+   <arg name="gui" value="true" />
+   <arg name="paused" value="false"/>
+   <arg name="use_sim_time" value="true"/>
+   <arg name="headless" value="false"/>
+  </include>
+
+  <!-- Spawn model -->
+  <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
+    args="-urdf -x 0 -y 0 -z 0  -model urdf_final -param robot_description"/>
+
+  <!--rplidar/
+  <include  file="$(find urdf_final)/launch/rplidar.launch"/>-->
+
+  <!-- Teleop-Key-->
+  <node name="telop" pkg="teleop_twist_keyboard" type="teleop_twist_keyboard.py"/> 
+ 
+  <!-- AMCL -->
+  <include  file="$(find naqel_kit)/launch/amcl.launch"/>
+ 
+  <!-- Map server -->
+  <arg name="map_file" default="$(find naqel_kit)/map/maze_map.yaml"/>
+  <node pkg="map_server" name="map_server" type="map_server" args="$(arg map_file)"/>
+
+  <!-- move_base -->
+  <include file="$(find naqel_kit)/launch/move_base.launch"/>
+</launch>
+

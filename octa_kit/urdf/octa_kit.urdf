@@ -1,0 +1,455 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-1-g15f4949  Build Version: 1.6.7594.29634
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="octa_kit">
+ <link name="base_footprint"/>
+
+  <joint name="base_joint" type="fixed">
+    <parent link="base_footprint"/>
+    <child link="base_link"/>
+    <origin xyz="0.0 0.0 0.10" rpy="0 0 0"/>
+  </joint>
+
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.000117690212319915 -0.00925270512769411 0.000380509137160229"
+        rpy="0 0 0" />
+      <mass
+        value="18.6538067263594" />
+      <inertia
+        ixx="0.159122798446346"
+        ixy="-4.9571479079817E-18"
+        ixz="0.000414410887862077"
+        iyy="0.324672654840652"
+        iyz="-5.89241921255454E-16"
+        izz="0.409098676308978" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://octa_kit/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://octa_kit/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <link
+    name="FLwheel">
+    <inertial>
+      <origin
+        xyz="-6.66133814775094E-16 -0.0298201892744482 1.11022302462516E-16"
+        rpy="0 0 0" />
+      <mass
+        value="0.968000094794702" />
+      <inertia
+        ixx="0.00153802084703046"
+        ixy="-1.11213418059244E-19"
+        ixz="9.80169648631589E-21"
+        iyy="0.00249087647105689"
+        iyz="6.77145279022122E-18"
+        izz="0.00153802084703046" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://octa_kit/meshes/FLwheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://octa_kit/meshes/FLwheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="FLwheel_joint"
+    type="continuous">
+    <origin
+      xyz="0.185054728559495 0.209747294872306 -0.0424494072951783"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="FLwheel" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+
+  <link
+    name="FRwheel">
+    <inertial>
+      <origin
+        xyz="2.5258E-13 0.02982 3.8046E-13"
+        rpy="0 0 0" />
+      <mass
+        value="0.968" />
+      <inertia
+        ixx="0.001538"
+        ixy="-6.8076E-18"
+        ixz="2.3605E-32"
+        iyy="0.0024909"
+        iyz="-3.319E-18"
+        izz="0.001538" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://octa_kit/meshes/FRwheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://octa_kit/meshes/FRwheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="FRwheel_joint"
+    type="continuous">
+    <origin
+      xyz="0.18505 -0.22825 -0.042449"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="FRwheel" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+
+  <link
+    name="BLwheel">
+    <inertial>
+      <origin
+        xyz="-1.99840144432528E-15 -0.0298201892744719 2.46566655981439E-13"
+        rpy="0 0 0" />
+      <mass
+        value="0.968000094794702" />
+      <inertia
+        ixx="0.00153802084703046"
+        ixy="-1.75634317457627E-20"
+        ixz="-1.71779884189411E-34"
+        iyy="0.00249087647105689"
+        iyz="3.31896837401117E-18"
+        izz="0.00153802084703046" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://octa_kit/meshes/BLwheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://octa_kit/meshes/BLwheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="BLwheel_joint"
+    type="continuous">
+    <origin
+      xyz="-0.14494 0.20975 -0.041894"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="BLwheel" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+
+  <link
+    name="BRwheel">
+    <inertial>
+      <origin
+        xyz="-6.9389E-18 0.02982 2.0817E-16"
+        rpy="0 0 0" />
+      <mass
+        value="0.968" />
+      <inertia
+        ixx="0.001538"
+        ixy="-5.5078E-20"
+        ixz="9.4245E-21"
+        iyy="0.0024909"
+        iyz="6.6398E-18"
+        izz="0.001538" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://octa_kit/meshes/BRwheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://octa_kit/meshes/BRwheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="BRwheel_joint"
+    type="continuous">
+    <origin
+      xyz="-0.14494 -0.22825 -0.041894"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="BRwheel" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+
+  <link
+    name="Lidar">
+    <inertial>
+      <origin
+        xyz="-4.74912061091681E-05 -2.77555756156289E-16 -5.40461726995511E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.271383339787701" />
+      <inertia
+        ixx="0.000174496418474111"
+        ixy="-1.59285810829418E-20"
+        ixz="7.18404565369169E-08"
+        iyy="0.000174496297464885"
+        iyz="-3.14491390259019E-19"
+        izz="0.000217146361083041" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://octa_kit/meshes/Lidar.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://octa_kit/meshes/Lidar.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Lidar_joint"
+    type="fixed">
+    <origin
+      xyz="0.07035 -0.00925270512769483 0.104803046232921"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="Lidar" />
+    <axis
+      xyz="0.00168441377404183 0 0.999998581374113" />
+  </joint>
+
+
+<!-- Transmission Blocks-->
+  <transmission name="FRwheel_joint_wheel_trans">
+       <type>transmission_interface/SimpleTransmission</type>
+       <actuator name="FRwheel_joint">
+         <hardwareInterface>VelocityJointInterface</hardwareInterface>
+         <mechanicalReduction>1</mechanicalReduction>
+       </actuator>
+       <joint name="FRwheel_joint">
+         <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+       </joint>
+  </transmission>
+
+  <transmission name="FLwheel_joint_wheel_trans">
+       <type>transmission_interface/SimpleTransmission</type>
+       <actuator name="FLwheel_joint">
+         <hardwareInterface>VelocityJointInterface</hardwareInterface>
+         <mechanicalReduction>1</mechanicalReduction>
+       </actuator>
+       <joint name="FLwheel_joint">
+         <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+       </joint>
+  </transmission>
+
+  <transmission name="BRwheel_joint_wheel_trans">
+       <type>transmission_interface/SimpleTransmission</type>
+       <actuator name="BRwheel_joint">
+         <hardwareInterface>VelocityJointInterface</hardwareInterface>
+         <mechanicalReduction>1</mechanicalReduction>
+       </actuator>
+       <joint name="BRwheel_joint">
+         <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+       </joint>
+  </transmission>
+
+  <transmission name="BLwheel_joint_wheel_trans">
+       <type>transmission_interface/SimpleTransmission</type>
+       <actuator name="BLwheel_joint">
+         <hardwareInterface>VelocityJointInterface</hardwareInterface>
+         <mechanicalReduction>1</mechanicalReduction>
+       </actuator>
+       <joint name="BLwheel_joint">
+         <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+       </joint>
+  </transmission>
+
+<!-- Gazebo Plug-in -->
+  <gazebo>
+    <plugin name="gazebo_ros_control" filename= "libgazebo_ros_control.so">
+  	 <robotNamespace>/</robotNamespace>
+    </plugin>
+  </gazebo> 
+
+<!-- Omni Plug-in -->
+  <gazebo>
+	<plugin name="omni_steering" filename="libgazebo_ros_planar_move.so">
+	  <commandTopic>cmd_vel</commandTopic>
+	  <odometryTopic>odom</odometryTopic>
+	  <odometryFrame>odom</odometryFrame>
+          <publishOdomTF>true</publishOdomTF>
+          <odometrySource>Final_maze</odometrySource>
+          <!--odometryRate>10.0</odometryRate-->
+          <updateRate>10.0</updateRate>
+          <robotBaseFrame>base_footprint</robotBaseFrame>
+          <publishTF>true</publishTF>
+	</plugin>
+  </gazebo>
+
+<!-- Sensor -->
+  <gazebo reference="Lidar">
+    <material>Gazebo/FlatBlack</material>
+    <sensor type="ray" name="rplidar">
+      <pose>-4.74912061091681E-05 -2.77555756156289E-16 -5.40461726995511E-05 0 0 0</pose>
+      <visualize>true</visualize>
+      <update_rate>10</update_rate>
+      <ray>
+        <scan>
+          <horizontal>
+            <samples>360</samples>
+            <resolution>1</resolution>
+            <min_angle>0.0</min_angle>
+            <max_angle>6.28319</max_angle>
+          </horizontal>
+        </scan>
+        <range>
+          <min>0.15</min>
+          <max>6</max>
+          <resolution>0.5</resolution>
+        </range> 
+        <noise>
+          <type>gaussian</type>
+          <mean>0.0</mean>
+          <stddev>0.01</stddev>
+        </noise>
+      </ray>
+      <always_on>1</always_on>
+      <plugin name="gazebo_ros_lds_lfcd_controller" filename="libgazebo_ros_laser.so">
+        <topicName>scan</topicName>
+        <frameName>Lidar</frameName>
+      </plugin>
+    </sensor>
+  </gazebo>
+
+  <gazebo reference="FLwheel">
+    <kp>500000.0</kp>
+    <kd>10.0</kd>
+    <material>Gazebo/Red</material>
+  </gazebo>
+
+  <gazebo reference="FRwheel">
+    <kp>500000.0</kp>
+    <kd>10.0</kd>
+    <material>Gazebo/Red</material>
+  </gazebo>
+
+  <gazebo reference="BRwheel">
+    <kp>1000000.0</kp>
+    <kd>100.0</kd>
+    <material>Gazebo/Red</material>
+  </gazebo>
+
+  <gazebo reference="BLwheel">
+    <kp>1000000.0</kp>
+    <kd>100.0</kd>
+    <material>Gazebo/Red</material>
+  </gazebo>
+
+
+
+</robot>

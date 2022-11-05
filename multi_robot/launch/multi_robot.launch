@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<launch>
+
+  <!-- Load the URDF into ROS parameter server -->
+  <param  name="robot_description" textfile="$(find octa_kit)/urdf/octa_kit.urdf"/>  
+  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
+
+    <!-- Load the URDF into ROS parameter server 
+  <param name="robot_description_kit2" textfile="$(find urdf_final)/urdf/urdf_final.urdf"/> -->
+ 
+  <!-- BEGIN ROBOT 1-->
+  <group ns="robot1">
+    <param name="tf_prefix" value="robot1_tf" />
+    <include file="$(find multi_robot)/launch/navigation.launch" >
+      <arg name="init_pose" value="-x 1 -y 0 -z 0" />
+      <arg name="robot_name"  value="robot1" />
+    </include>
+  </group>
+
+ <!-- BEGIN ROBOT 2
+  <group ns="robot2">
+    <param name="tf_prefix" value="robot2_tf" />
+    <include file="$(find multi_robot)/launch/urdf_final.launch" >
+      <arg name="init_pose" value="-x -1 -y 0 -z 0" />
+      <arg name="robot_name"  value="Robot2" />
+    </include>
+  </group>-->
+
+
+</launch>

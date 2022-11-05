@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<launch>
+
+  <arg name="robot_name"/>  
+  <arg name="init_pose"/>
+
+  <rosparam  file="$(find octa_kit)/config/joint_states.yaml" command="load" ns="robot1"/>
+  <!--convert joint states to TF transforms for rviz, etc-->
+  <node name="robot_state_publisher_1" pkg="robot_state_publisher" type="robot_state_publisher"/>  
+  <!-- Spawn model -->
+  <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
+    args="$(arg init_pose) -urdf -param /robot_description -model robot1"/>
+  <node pkg="tf" type="static_transform_publisher" name="FLwheel_map_broadcaster" args="0.185054728559495 0.209747294872306 -0.0424494072951783 0 0 0 robot1_tf/base_link robot1_tf/FLwheel 1000"/>
+  <node pkg="tf" type="static_transform_publisher" name="FRwheel_map_broadcaster" args="0.18505 -0.22825 -0.042449 0 0 0 robot1_tf/base_link robot1_tf/FRwheel 1000"/>
+  <node pkg="tf" type="static_transform_publisher" name="BLwheel_map_broadcaster" args="-0.14494 0.20975 -0.041894 0 0 0 robot1_tf/base_link robot1_tf/BLwheel 1000"/>
+  <node pkg="tf" type="static_transform_publisher" name="BRwheel_map_broadcaster" args="-0.14494 -0.22825 -0.041894 0 0 0 robot1_tf/base_link robot1_tf/BRwheel 1000"/>
+</launch>

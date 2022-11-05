@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<launch>
+
+  <arg name="robot_name"/>
+  <arg name="init_pose"/>
+
+
+  <!--convert joint states to TF transforms for rviz, etc--> 
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"/> 
+
+  <!-- Spawn model -->
+  <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
+    args="$(arg init_pose) -urdf -param /robot_description_kit2 -model $(arg robot_name)"/>
+
+  <rosparam  file="$(find urdf_final)/config/joint_states.yaml" command="load"/>
+
+
+</launch>
+

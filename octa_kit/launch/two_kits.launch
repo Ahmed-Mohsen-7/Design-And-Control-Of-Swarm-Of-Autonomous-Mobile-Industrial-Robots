@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<launch>
+  <!-- Load the URDF into ROS parameter server -->
+<group ns="robot_1">
+  <param  name="robot_description" textfile="$(find octa_kit)/urdf/octa_kit.urdf"/> 
+  <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
+    args="-urdf -model octa_kit -param robot_description"/>
+</group>
+
+<group ns="robot_2">
+  <param name="robot_description" textfile="$(find urdf_final)/urdf/urdf_final.urdf"/> 
+  <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
+    args="-urdf -model urdf_final -param robot_description"/>
+</group>
+
+  <!--Launch gazebo-->
+  <include  file="$(find gazebo_ros)/launch/empty_world.launch"/>
+
+</launch>
+
