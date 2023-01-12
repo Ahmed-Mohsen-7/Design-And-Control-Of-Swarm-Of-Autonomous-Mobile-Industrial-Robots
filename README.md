@@ -53,6 +53,6 @@ To use the navigation stack for the movement:
     
  ### External information
 
-For more details you can visit ROSWIKI or check the team report from this link: https://drive.google.com/file/d/1NA_cO5XRFUWNk_7cYEJZ8mevnUOzOULn/view?usp=sharing 
+For more details you can visit ROSWIKI or check the team report from this link: https://drive.google.com/file/d/1rzE1huP0vnKggebA2AQU5oxEu1LVhYov/view?usp=sharing
 
 
