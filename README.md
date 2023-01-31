@@ -50,8 +50,18 @@ To visuallize the two robots in the same map:
 To use the navigation stack for the movement:
 
     $roslaunch multi_robot_nav nav.launch
-    
- ### External information
+
+## Results
+### Mapping:
+One of the critical module for robot navigation is mapping the environment. In this video, robot moves in real set-up to build the map using RP-Lidar (on the right). The accumulated map is shown (on the rleft) in rviz using Hector SLAM. 
+    <p align="center"><img src="data/Hardware_Mapping.gif" width="80%"></p>
+Robot in the video moves according to commands sent from another station using teleopkey ROS.
+
+### Planning:
+After successfully implementing robot navigation modules, robot was able to navigate from its position to a position specified by the user (using 2d nav goal in rviz). The video shows the robot which moves simultaneously in simulation and in real experiment. 
+    <p align="center"><img src="data/Hardware_Planning.gif" width="80%"></p>
+The commands in this video is sent from the controller (Jetson Xavier) to the hardware.
+## External information
 
 For more details you can visit ROSWIKI or check the team report from this link: https://drive.google.com/file/d/1rzE1huP0vnKggebA2AQU5oxEu1LVhYov/view?usp=sharing
 
